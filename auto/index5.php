@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Automatic Image Montage with jQuery</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Automatic Image Montage with jQuery" />
+        <meta name="keywords" content="jquery, images, montage, fullscreen, floating, grid, automatic" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&v1' rel='stylesheet' type='text/css' />
+		<link href='http://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" href="css/demo.css">
+    </head>
+    <body>
+		<div class="container">
+			<div class="header">
+				<a href="http://tympanus.net/Development/ImageZoomTour/"><span>&laquo; Previous Demo: </span>Image Zoom Tour</a>
+				<span class="right_ab">
+					<a href="http://www.behance.net/AndrewLili" title="Behance Profile of Andrey Yakovlev & Lili Aleeva" target="_blank">Images by Andrey & Lili</a>
+					<a href="http://creativecommons.org/licenses/by-nc/3.0/" target="_blank" title="Images licensed under CC BY-NC 3.0">CC BY-NC 3.0</a>
+					<a href="http://tympanus.net/codrops/2011/08/30/automatic-image-montage/"><strong>back to the Codrops post</strong></a>
+				</span>
+			</div>
+			<div id="overlay" class="content">
+				<div class="inner">
+					<h1>Automatic Image Montage <span>with jQuery</span></h1>
+					<h2>Fixed width and height of a wrapper with scrollbar, last image will fill the last row.</h2>
+					<div class="snippet">
+						<span id="showcode" class="down">View the options for this example</span>
+						<pre>
+liquid 	: false,
+fillLastRow : true
+
+&lt;div style="width:800px;height:300px;overflow-y:scroll;"&gt;
+	&lt;div class="am-container" id="am-container"&gt;
+	...
+	&lt;div/&gt;
+&lt;div/&gt;	
+						</pre>
+					</div>
+					<div class="more">
+						<ul>
+							<li>More examples:</li>
+							<li><a href="index.html">Example 1</a></li>
+							<li><a href="index2.html">Example 2</a></li>
+							<li><a href="index3.html">Example 3</a></li>
+							<li><a href="index4.html">Example 4</a></li>
+							<li class="selected"><a href="index5.html">Example 5</a></li>
+							<li><a href="index6.html">Example 6</a></li>
+							<li><a href="index7.html">Example 7</a></li>
+							<li><a href="index8.html">Example 8</a></li>
+						</ul>
+					</div>
+					<div class="clr"></div>
+					<div id="panel" class="panel hide"></div>
+				</div>
+			</div>
+			<div style="width:1000px;height:300px;	 margin:40px auto;">
+				<div class="am-container" id="am-container">
+					<?php  
+						$i=1;
+						while($i<20){
+							echo "<a href='#'><img src='../img/mini/".$i.".jpg'></img></a>";
+							$i++;
+						}
+					?>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.montage.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				/* 
+				 * just for this demo:
+				 */
+				$('#showcode').toggle(
+					function() {
+						$(this).addClass('up').removeClass('down').next().slideDown();
+					},
+					function() {
+						$(this).addClass('down').removeClass('up').next().slideUp();
+					}
+				);
+				$('#panel').toggle(
+					function() {
+						$(this).addClass('show').removeClass('hide');
+						$('#overlay').stop().animate( { left : - $('#overlay').width() + 20 + 'px' }, 300 );
+					},
+					function() {
+						$(this).addClass('hide').removeClass('show');
+						$('#overlay').stop().animate( { left : '0px' }, 300 );
+					}
+				);
+				
+				var $container 	= $('#am-container'),
+					$imgs		= $container.find('img').hide(),
+					totalImgs	= $imgs.length,
+					cnt			= 0;
+				
+				$imgs.each(function(i) {
+					var $img	= $(this);
+					$('<img/>').load(function() {
+						++cnt;
+						if( cnt === totalImgs ) {
+							$imgs.show();
+							$container.montage({
+								liquid 	: false,
+								fillLastRow : true
+							});
+							
+							/* 
+							 * just for this demo:
+							 */
+							$('#overlay').fadeIn(500);
+						}
+					}).attr('src',$img.attr('src'));
+				});	
+				
+			});
+		</script>
+    </body>
+</html>

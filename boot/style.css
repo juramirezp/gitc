@@ -1,0 +1,414 @@
+html, body{
+	width: 100%;
+	height: 100%;
+}
+*{
+	font-family:'Avenir LT Std 45 Book';
+	font-weight: normal;
+	font-style: normal;
+	letter-spacing: 2px;
+	color:#666;
+
+}
+
+#datos_lista{
+	margin-left: 3em;
+}
+
+#lista_proyecto p{
+	margin: 1px;
+}
+.label{
+	background-color: #b02042;
+	color: white;
+	margin-left: 5px;
+}
+#img_lista{
+	border: 3px solid white;
+	margin: 0;
+	padding: 0;
+	border-radius: 800px;
+	overflow: hidden;
+	width: 8em;
+	height: 8em;
+	margin-left: 30%;
+}
+#img_lista:hover{
+	border: 3px solid #b02042;
+}
+
+#lista_proyecto{
+	margin-top: 5em;
+}
+
+#lista_proyectos{
+	height: 500px;
+	overflow: scroll;
+}
+#titulo_lista{
+	font-size: 1.6em;
+	color: #b02042;
+	margin-top: 5px;
+}
+#titulo_lista:hover{
+	color:grey;
+	font-style: inherit;
+
+}
+#direccion_lista{
+	color: grey;
+	font-size: 1.1em;
+}
+
+#titulo_proyecto{
+	font-size: 2em;
+	color: #b02042;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.parrafo_proyecto{
+	font-size: 1.2em;
+	padding-top: 0.3em;
+}
+
+.boton_atras{
+	padding: 5px;
+	padding-bottom: 8px;
+	border-radius: 5px;
+}
+
+.boton_atras:hover{
+	background-color: rgba(128,128,128,0.1);
+	color: #b02042;
+	font
+}
+#menu_admin_proyecto{
+	display: none;
+}
+#proyectos a{
+	text-decoration: none;
+}
+
+.margen{
+	padding-top: 10em;
+}
+
+.alerta{
+	color:red;
+	display: none;
+}
+
+.navbar{
+	background-color: white;
+	border: none;
+	margin-bottom: 2em;
+	position: fixed;
+	width: 100%;
+	z-index: 200;
+}
+
+.navbar img{
+	width: 4em;
+	padding: 0.8em;
+}
+
+.navbar li{
+	border: 0;
+	border-bottom: 3px;
+	border-color: white;
+	border-style: solid;
+}
+.navbar a{
+	text-decoration: none;
+	color: #666;
+}
+
+#menu_admin_proyecto{
+	display: none;
+}
+
+
+.navbar li:hover{
+	border-color: #b02042;
+}
+.navbar{
+	margin-top: -7em;
+	padding-top: 0;
+}
+
+
+.form-control:focus {box-shadow: 0 0 5px rgba(188,20,87,1);border:1px solid rgba(188,20,87,0.8);}
+
+
+h2{
+	color: rgba(176,32,66,1);
+	padding-bottom: 2em;
+}
+
+#imagen1{
+	margin-top: 2em;
+}
+
+#imagenx{
+	margin: 1em;
+}
+
+#vista_proyecto a{
+	border-style: solid;
+	border: 20px;
+	border-color: #b02042;
+}
+
+#menu_admin_proyecto{
+	margin-top: 2em;
+	position: fixed;
+	display: inline;
+}
+
+#vista_proyecto{
+	margin-left: 13em;
+}
+
+#proyecto{
+	margin-top: 7em;
+}
+
+.menu-admin{
+	padding-top: 2em;
+}
+
+.dropzone{
+	border-style: dashed;
+	border-width: 2px;
+	border-color: #b02042;
+	background-color: white;
+}
+
+.dropzone:hover{
+	border-color:#A0A0A0;
+}
+.galleria{
+	height: 600px;
+	margin-top: 1em;
+}
+
+#upload, #editar{
+	background-color: rgba(255,255,255,0.8);
+	width: 100%;
+	height: 150%;
+	margin-top: -7em;
+	z-index: 200;
+	position: fixed;
+	display: none;
+	padding-bottom: 20em;
+}
+#galeriaInicio{
+	background-color: rgba(255,255,255,1);
+	width: 100%;
+	height: 150%;
+	z-index: 200;
+	position: fixed;
+	display: none;
+}
+
+#editar{
+	margin: 0;
+}
+#col_datos{
+	padding-top: 1.5em;
+}
+#x{
+	color: black;
+	padding: 1em;
+	margin-left: 15em;
+	font-size: 1.2em;
+	margin-top: 2em;
+	margin-bottom: 1em;
+}
+#ver_proyecto{
+	margin-top: 5em;
+	color: black;
+	text-align: center;
+	position: fixed;
+	margin-left: 5em;
+}
+#logo_galeria{
+	width: 5em;
+	margin-left: 15em;
+	margin-top: 28em;
+}
+.imgEdit, #div_imgPrincipal{
+	border: 3px solid white;
+	margin: 0;
+	padding: 0;
+	border-radius: 800px;
+	overflow: hidden;
+	width: 11em;
+	height: 11em;
+	margin: 1em;
+}
+
+.imgEdit:hover{
+	border: 3px solid #b02042;
+	cursor: pointer;
+}
+.imgSelected, #div_imgPrincipal{
+	border: 3px solid #b02042;
+}
+.imgSelected:hover{
+	border: 3px solid rgba(188,20,87,0.474509803922);
+}
+.imgPrincipal{
+	border: 3px dashed #b02042;	
+}
+#imagenes{
+	margin-top: 5em;
+}
+#upload form{
+	margin-top: 17em;
+}
+#upload .btn{
+	margin-top: 1em;
+}
+#agregarImg, #editarImg{
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+#div_crear_proyecto #btn_grabar{
+	margin-top: 2em;
+}
+
+#margen-galeria{
+	display: none;
+}
+#galeria{
+	margin-top: 0;
+}
+#galeria #imagen{
+	width: 90%;
+}
+
+#team{
+	margin-top: 4em;
+}
+#nosotros{
+	text-align: justify;
+}
+
+.menu-admin{
+	display: none;
+}
+
+@media only screen and (min-width : 768px) {
+	/*estilo del Menu*/
+.menu-admin{
+	display: inline;
+}
+
+#margen-galeria, #galeria{
+	display: inline;
+}
+
+#margen-galeria{
+	margin-top: 5em;
+}
+
+.navbar{
+	text-align: center;
+	font-size: 1em;
+	position: fixed;
+	width: 100%;
+	margin:0;
+	margin-top: -2em;
+	z-index: 100;
+}
+
+#galeria{
+	padding-top: 10em;
+}
+#proyectos{
+	position: fixed;
+	z-index: 4;
+	margin-top: 10em;
+}
+
+
+.navbar a {
+	color: #666;
+}
+
+.navbar a:hover {
+	color:#282828;
+}
+
+.navbar li{
+	border:0;
+}
+
+.navbar .li-boton{
+
+	padding-top: 4em;
+}
+
+.navbar .pri, .navbar .seg{
+	text-align: right;
+}
+
+.navbar .ter, .navbar .cua{
+	text-align: left;
+}
+
+.navbar .cua{
+	/*FORZA EL TEXO EN UNA LINEA*/
+	white-space:nowrap;
+	padding-left: 2em;
+}
+
+#logo_inicio{
+	width: 9em;
+	padding-top: 3em;
+}
+
+#logo_admin{
+	width: 6em;
+	padding-top: 3em;
+}
+
+.main-admin{
+	padding-top: 8em;
+}
+
+#nosotros{
+	padding-top: 7em;
+}
+#txt-nosotros p{
+	text-align: justify;
+	padding: 0.3em;
+	padding-left: 4em;
+	padding-right: 4em;
+	font-size: 1.3em;
+}
+
+/*Footer*/
+footer .dir{
+	font-size: 1em;
+	text-align: center;
+}
+
+footer #fono{
+	text-align: right;
+	color: #b02042;
+
+}
+
+footer #mail{
+	text-align: left;
+	color: #b02042;
+	font-family:'Avenir LT Std 45 Book';
+}
+#proyectos_img{
+	overflow: scroll;
+}
+

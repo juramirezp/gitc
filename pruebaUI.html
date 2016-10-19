@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Sortable - Drop placeholder</title>
+  <divnk rel="stylesheet" href="js/jquery-ui.css">
+  <style>
+  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #sortable div { margin: 0 5px 5px 5px; padding: 5px; font-size: 1.2em; }
+  html>body #sortable div { line-height: 1.2em; }
+  .ui-state-highlight {  line-height: 1.2em; }
+  </style>
+  <script src="js/jquery.min.js"></script>
+  <script src="jqueryui/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#sortable" ).sortable({
+      placeholder: "ui-state-highlight"
+    });
+    $( "#sortable" ).disableSelection();
+  } );
+  </script>
+</head>
+<body>
+ 
+<div id="sortable">
+  <div class="ui-state-default">
+    <div class="row">
+      <div class="col-sm-12">
+        <p>lqebnflenfleqnf</p>
+      </div>
+    </div>
+  </div>
+  <div> class="ui-state-default">Item 2</div>
+  <div class="ui-state-default">Item 3</div>
+  <div class="ui-state-default">Item 4</div>
+  <div class="ui-state-default">Item 5</div>
+  <div class="ui-state-default">Item 6</div>
+  <div class="ui-state-default">Item 7</div>
+</div>
+ 
+ 
+</body>
+</html>
